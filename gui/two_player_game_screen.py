@@ -7,7 +7,7 @@ class TwoPlayerGameScreen:
     def __init__(self, root, back_to_menu_callback):
         self.root = root
         self.back_to_menu_callback = back_to_menu_callback
-        self.game = BlackjackGame() 
+        self.game = BlackjackGame()
         self.game.start_game()      
         self.current_player = "Player 1" 
 
@@ -64,7 +64,7 @@ class TwoPlayerGameScreen:
             player1_score=self.game.player.get_score()
             print(player1_score)
             self.current_player = "Player 2"
-            player2_score=self.game.player.get_score()
+            player2_score=self.game.dealer.get_score()
             print(player2_score)
             if player1_score > player2_score:
                 self.end_game("Player 1 wins.")
