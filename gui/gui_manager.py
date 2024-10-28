@@ -12,7 +12,7 @@ class GUIManager:
 
     def show_main_menu(self):
         self.clear_screen()
-        main_menu = MainMenu(self.root, self.show_game_screen)
+        main_menu = MainMenu(self.root)
 
     def show_game_screen(self):
         self.clear_screen()

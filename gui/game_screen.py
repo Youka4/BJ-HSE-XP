@@ -29,13 +29,13 @@ class GameScreen:
         tk.Label(self.player_frame, text="Player's Cards:", font=("Arial", 14)).pack()
 
         self.hit_button = tk.Button(self.root, text="Hit", command=self.player_hit, font=("Arial", 14))
-        self.hit_button.pack(side=tk.LEFT, padx=10)
+        self.hit_button.pack( padx=10)
 
         self.stand_button = tk.Button(self.root, text="Stand", command=self.dealer_turn, font=("Arial", 14))
-        self.stand_button.pack(side=tk.LEFT, padx=10)
+        self.stand_button.pack( padx=10)
 
         back_button = tk.Button(self.root, text="Back to Menu", command=self.back_to_menu_callback, font=("Arial", 14))
-        back_button.pack(pady=20)
+        back_button.pack(side=tk.BOTTOM, pady=20)
 
     def player_hit(self):
         self.game.player_hit()
