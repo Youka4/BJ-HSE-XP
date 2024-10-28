@@ -3,3 +3,5 @@ tk               # Tkinter for GUI
 
 # Testing
 pytest           # For running tests
+
+pytest-tkinter   # Allows testing of Tkinter components with pytest
