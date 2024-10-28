@@ -1,7 +1,7 @@
 
 import tkinter as tk
-from main_menu import MainMenu
-from game_screen import GameScreen
+from .main_menu import MainMenu
+from .game_screen import GameScreen
 
 class GUIManager:
     def __init__(self, root):
