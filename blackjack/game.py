@@ -1,6 +1,8 @@
-from player import Player
-from deck import Deck
-from bot import DealerBot
+from blackjack.player import Player
+from blackjack.deck import Deck
+from blackjack.bot import DealerBot
+
+
 
 class BlackjackGame:
     def __init__(self):
