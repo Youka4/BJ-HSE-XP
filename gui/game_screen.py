@@ -1,5 +1,8 @@
-
 import tkinter as tk
+
+import os
+from PIL import Image, ImageTk
+
 
 class GameScreen:
     def __init__(self, root, back_to_menu_callback):
@@ -21,6 +24,19 @@ class GameScreen:
 
         back_button = tk.Button(self.root, text="Back to Menu", command=self.back_to_menu_callback, font=("Arial", 14))
         back_button.pack(side=tk.BOTTOM, pady=20)
+
+    def load_card_image(self, card_name):
+        """Load and return a card image for Tkinter display."""
+
+        image_path = os.path.join("assets", "images", "cards", f"{card_name}.png")
+
+        try:
+            image = Image.open(image_path)
+            image = image.resize((100, 150))  # Optional: Resize as needed
+            return ImageTk.PhotoImage(image)
+        except FileNotFoundError:
+            print(f"Image not found for {card_name}")
+            return None
 
     def hit(self):
         # TODO: Placeholder for hit action
