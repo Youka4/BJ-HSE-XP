@@ -15,9 +15,9 @@ class Player:
         aces = 0
         for card in self.hand:
             rank = card.split(" ")[0]
-            if rank in ["Jack", "Queen", "King"]:
+            if rank in ["jack", "queen", "king"]:
                 score += 10
-            elif rank == "Ace":
+            elif rank == "ace":
                 aces += 1
                 score += 11
             else:

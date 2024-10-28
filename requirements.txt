@@ -2,6 +2,7 @@
 tk               # Tkinter for GUI
 
 # Testing
-pytest           # For running tests
+pytest~=8.2.0
 
 pytest-xvfb     # Plugin to run tests requiring a display server in headless mode
+pillow~=10.4.0
