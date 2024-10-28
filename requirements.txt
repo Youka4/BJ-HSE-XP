@@ -4,3 +4,4 @@ tk               # Tkinter for GUI
 # Testing
 pytest           # For running tests
 
+pytest-xvfb     # Plugin to run tests requiring a display server in headless mode
