@@ -19,7 +19,7 @@
 
 1. Склонируйте репозиторий на локальный компьютер:
    ```bash
-   git clone https://github.com/ваш_пользователь/blackjack-game.git
+   git clone https://github.com/Youka4/BJ-HSE-XP
    cd blackjack-game
    ```
 2. Установите необходимые зависимости:
