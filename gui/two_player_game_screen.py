@@ -7,7 +7,7 @@ class TwoPlayerGameScreen:
     def __init__(self, root, back_to_menu_callback):
         self.root = root
         self.back_to_menu_callback = back_to_menu_callback
-        self.game = BlackjackGame()
+        self.game = BlackjackGame(is_two_player=True)
         self.game.start_game()      
         self.current_player = "Player 1" 
 
@@ -51,9 +51,9 @@ class TwoPlayerGameScreen:
             if self.game.player.get_score() > 21:
                 self.end_game("Player 1 busts! Player 2 wins.")
         else:
-            self.game.dealer.add_card(self.game.deck.draw_card())
+            self.game.player2.add_card(self.game.deck.draw_card())
             self.update_display()
-            if self.game.dealer.get_score() > 21:
+            if self.game.player2.get_score() > 21:
                 self.end_game("Player 2 busts! Player 1 wins.")
 
     def switch_turn(self):
@@ -64,7 +64,7 @@ class TwoPlayerGameScreen:
             player1_score=self.game.player.get_score()
             print(player1_score)
             self.current_player = "Player 2"
-            player2_score=self.game.dealer.get_score()
+            player2_score=self.game.player2.get_score()
             print(player2_score)
             if player1_score > player2_score:
                 self.end_game("Player 1 wins.")
@@ -82,8 +82,8 @@ class TwoPlayerGameScreen:
         self.player1_score_label.config(text=f"Player 1 Score: {self.game.player.get_score()}")
 
         self.clear_card_labels(self.player2_card_labels)
-        self.player2_card_labels = self.display_cards(self.game.dealer.hand, self.player2_frame)
-        self.player2_score_label.config(text=f"Player 2 Score: {self.game.dealer.get_score()}")
+        self.player2_card_labels = self.display_cards(self.game.player2.hand, self.player2_frame)
+        self.player2_score_label.config(text=f"Player 2 Score: {self.game.player2.get_score()}")
 
     def display_cards(self, hand, frame):
         card_labels = []

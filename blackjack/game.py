@@ -5,18 +5,29 @@ from blackjack.bot import DealerBot
 
 
 class BlackjackGame:
-    def __init__(self):
+    def __init__(self, is_two_player=False):
         self.deck = Deck()
-        self.player = Player("Player")
-        self.dealer = DealerBot("Dealer")
+        self.is_two_player = is_two_player
+        if is_two_player:
+            self.player = Player("Player1")
+            self.player2 = Player("Player2")
+            self.dealer = None
+        else:
+            self.player = Player("Player")
+            self.dealer = DealerBot("Dealer")
+            self.player2 = None
         self.game_over = False
 
     def start_game(self):
-        
-        self.player.add_card(self.deck.draw_card())
-        self.player.add_card(self.deck.draw_card())
-        self.dealer.add_card(self.deck.draw_card())
-        self.dealer.add_card(self.deck.draw_card())
+        if self.is_two_player :
+            self.get_two_cards(self.player2)
+        else:
+            self.get_two_cards(self.dealer)
+        self.get_two_cards(self.player)
+
+    def get_two_cards(self, player: Player):
+        player.add_card(self.deck.draw_card())
+        player.add_card(self.deck.draw_card())
 
     def player_hit(self):
         
